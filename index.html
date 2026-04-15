@@ -1,11 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Structure Visualiser Layout</title>
+    <link rel="stylesheet" href="styles.css" />
     
-</body>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">Header</header>
+
+    <!-- Main Layout -->
+    <div class="container">
+      <!-- Left Sidebar -->
+       
+      <aside class="sidebar">
+        <h5>select category</h5>
+        <div class="dropdown">
+          <button class="dropbtn">Array <span class="arrow">▼</span></button>
+          <div class="dropdown-content">
+            <a href="#">updation</a>
+            <a href="#">deletion</a>
+            <a href="#">searching</a>
+            <a href="#">traversal</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Linked List <span class="arrow">▼</span></button>
+          <div class="dropdown-content">
+            <a href="#">insertion</a>
+            <a href="#">deletion</a>
+            <a href="#">searching</a>
+            <a href="#">traversal</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Stack <span class="arrow">▼</span></button>
+          <div class="dropdown-content">
+            <a href="#">push</a>
+            <a href="#">pop</a>
+            <a href="#">peek</a>
+            <a href="#">isEmpty</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Queue <span class="arrow">▼</span></button>
+          <div class="dropdown-content">
+            <a href="#">enqueue</a>
+            <a href="#">dequeue</a>
+            <a href="#">front</a>
+            <a href="#">rear</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">KK <span class="arrow">▼</span></button>
+          <div class="dropdown-content">
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+          </div>
+        </div>
+
+        <!-- <div class="select-section">Select Category</div> -->
+      </aside>
+
+      <!-- Main Interface -->
+      <main class="main">Main Interface
+
+        <div class="spacer"></div>
+
+      </main>
+
+      <!-- Right Code Panel -->
+      <aside class="code">Code</aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">Footer</footer>
+
+    <script>
+      // Add click event to dropdown buttons
+      document.querySelectorAll('.dropbtn').forEach(button => {
+        button.addEventListener('click', function() {
+          // Close all dropdowns first
+          document.querySelectorAll('.dropdown-content').forEach(content => {
+            content.style.display = 'none';
+          });
+          // Toggle the clicked one
+          const content = this.nextElementSibling;
+          if (content.style.display === 'block') {
+            content.style.display = 'none';
+          } else {
+            content.style.display = 'block';
+          }
+        });
+      });
+
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          document.querySelectorAll('.dropdown-content').forEach(content => {
+            content.style.display = 'none';
+          });
+        }
+      });
+    </script>
+    
+  </body>
 </html>
