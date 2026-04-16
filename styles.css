@@ -95,8 +95,8 @@ body {
 }
 
 .spacer {
-  margin: 100px;
-  padding: 100px;
+  margin: 20%;
+  padding: 20%;
 }
 
 @media (max-width: 768px) {
